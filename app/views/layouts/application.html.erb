@@ -82,10 +82,7 @@
                   <li><%= link_to 'My posts', [current_user, :posts] %></li>
                 <% end %>
               </ul>
-
-              <% tag_cloud(ActsAsTaggableOn::Tag.scoped, %w(css1 css2 css3 css4)) do |tag, class_name| %>
-                <%= link_to tag.name, { :controller => :tags, :action => :show, :id => tag.id }, :class => class_name %>
-              <% end %>
+              <%= content_for :tags_cloud if content_for? :tags_cloud %>
             </div><!--/.well -->
           </div><!--/span-->
         </div><!--/row-->

@@ -1,5 +1,10 @@
 <h1>Blog me is a revolution blog system for nerds</h1>
 
+<% content_for :tags_cloud do %>
+  <% tag_cloud(ActsAsTaggableOn::Tag.scoped, %w(css1 css2 css3 css4)) do |tag, class_name| %>
+    <%= link_to tag.name, { :controller => :tags, :action => :show, :id => tag.id }, :class => class_name %>
+  <% end %>
+<% end %>
 <%= render collection %>
 
 <%= paginate collection %>

@@ -3,11 +3,15 @@ BlogMe::Application.routes.draw do
 
   root :to => 'home#index'
 
-  resources :posts
+  resources :posts do
+    resources :comments, :only => [:new, :create]
+  end
 
   resources :tags, :only => :show
 
   resources :users, :only => [] do
     resources :posts, :only => :index
   end
+
+  resources :comments, :only => [:show, :edit, :update, :destroy]
 end

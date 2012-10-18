@@ -16,3 +16,15 @@
 
   <%= render :partial => 'tags/tag', :collection => resource.tags %>
 <% end %>
+
+<div id="comments">
+  <% if resource.comments.any? %>
+    <%= render resource.comments %>
+  <% end %>
+</div>
+
+<% if can? :create, Comment %>
+  <h6>Add a comment</h6>
+
+  <%= render 'comments/form', :post => resource, :comment => resource.comments.new %>
+<% end %>
