@@ -64,5 +64,11 @@ module BlogMe
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.stylesheets false
+      g.helper false
+      g.javascripts false
+    end
   end
 end
