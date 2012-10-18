@@ -22,3 +22,5 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'russian'
+
+gem 'inherited_resources'
