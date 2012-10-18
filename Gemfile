@@ -24,3 +24,5 @@ gem 'devise'
 gem 'russian'
 
 gem 'inherited_resources'
+
+gem 'cancan'
