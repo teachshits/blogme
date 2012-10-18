@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   private
   def collection
-    @posts ||= Post.scoped.order('created_at DESC')
+    @posts ||= Post.scoped.page(params[:page]).order('created_at DESC')
   end
 end

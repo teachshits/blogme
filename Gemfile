@@ -26,3 +26,7 @@ gem 'russian'
 gem 'inherited_resources'
 
 gem 'cancan'
+
+gem 'kaminari'
+
+gem 'acts-as-taggable-on', '~> 2.3.1'

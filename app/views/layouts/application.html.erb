@@ -77,9 +77,15 @@
                 <li class="nav-header">Sidebar</li>
                 <% if can? :create, Post %>
 
-                  <%= link_to 'Create a post', :new_post %>
+                  <li><%= link_to 'Create a post', :new_post %></li>
+
+                  <li><%= link_to 'My posts', [current_user, :posts] %></li>
                 <% end %>
               </ul>
+
+              <% tag_cloud(ActsAsTaggableOn::Tag.scoped, %w(css1 css2 css3 css4)) do |tag, class_name| %>
+                <%= link_to tag.name, { :controller => :tags, :action => :show, :id => tag.id }, :class => class_name %>
+              <% end %>
             </div><!--/.well -->
           </div><!--/span-->
         </div><!--/row-->

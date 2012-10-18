@@ -10,3 +10,9 @@
 <% end %>
 
 <%= simple_format(resource.text) %>
+
+<% if resource.tags.any? %>
+  <hr>
+
+  <%= render :partial => 'tags/tag', :collection => resource.tags %>
+<% end %>

@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  paginates_per 5
+
   attr_accessible :slug, :text, :title
 
   attr_protected :user_id
@@ -10,6 +12,8 @@ class Post < ActiveRecord::Base
   after_create :update_slug
 
   before_update :assign_slug
+
+  acts_as_taggable
 
   def to_param
     slug

@@ -4,5 +4,5 @@
 
 <% # для простоты эксперимента логика засунута во вьюху
    # никогда так не делать :) %>
-<p>Author: <%= post.user.email.split('@')[0] %></p>
+<p>Author: <%= link_to post.user.email.split('@')[0], [post.user, :posts] %></p>
 <hr>

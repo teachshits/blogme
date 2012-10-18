@@ -1,0 +1,7 @@
+<h1>Posts by tag: <%= @tag.name %></h1>
+
+<% if @tag.taggings.any? %>
+  <%= render @tag.taggings.map(&:taggable) %>
+<% else %>
+  <p>Nothing tagged by '<%= tag.name %>'</p>
+<% end %>
