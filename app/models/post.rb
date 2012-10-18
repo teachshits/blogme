@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
-  attr_accessible :slug, :text, :title, :user_id
+  attr_accessible :slug, :text, :title
 
-  validates :text, :slug, :title, :user_id, :presence => true
+  attr_protected :user_id
+
+  validates :text, :title, :user_id, :presence => true
 
   belongs_to :user
 
