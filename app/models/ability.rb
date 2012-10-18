@@ -8,5 +8,7 @@ class Ability
     if user.persisted?
       can :manage, Post, :user_id => user.id
     end
+
+    can :read, Post
   end
 end

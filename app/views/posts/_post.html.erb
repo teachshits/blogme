@@ -1,1 +1,8 @@
 <h3><%= link_to post.title, post %></h3>
+
+<p><%= truncate(post.text, :length => 100) %></p>
+
+<% # для простоты эксперимента логика засунута во вьюху
+   # никогда так не делать :) %>
+<p>Author: <%= post.user.email.split('@')[0] %></p>
+<hr>

@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
-  def index
+  helper_method :collection
+
+  private
+  def collection
+    @posts ||= Post.scoped.order('created_at DESC')
   end
 end
